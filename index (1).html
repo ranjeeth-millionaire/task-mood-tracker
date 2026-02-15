@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task & Mood Tracker</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container that holds everything -->
+    <div class="container">
+        <!-- Header section -->
+        <header>
+            <h1>Daily Tracker</h1>
+            <p class="subtitle">Track your tasks and mood each day</p>
+        </header>
+
+        <!-- Mood tracking card -->
+        <div class="card">
+            <h2 class="card-title">
+                <span class="card-icon">😊</span>
+                How are you feeling?
+            </h2>
+            <div class="mood-selector">
+                <!-- Each mood button -->
+                <button class="mood-btn" data-mood="amazing" title="Amazing">
+                    😄
+                    <span class="mood-label">Amazing</span>
+                </button>
+                <button class="mood-btn" data-mood="good" title="Good">
+                    🙂
+                    <span class="mood-label">Good</span>
+                </button>
+                <button class="mood-btn" data-mood="okay" title="Okay">
+                    😐
+                    <span class="mood-label">Okay</span>
+                </button>
+                <button class="mood-btn" data-mood="bad" title="Bad">
+                    😔
+                    <span class="mood-label">Bad</span>
+                </button>
+                <button class="mood-btn" data-mood="terrible" title="Terrible">
+                    😢
+                    <span class="mood-label">Terrible</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Tasks card -->
+        <div class="card">
+            <h2 class="card-title">
+                <span class="card-icon">✅</span>
+                Today's Tasks
+            </h2>
+            
+            <!-- Input area to add new tasks -->
+            <div class="task-input-container">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="What do you need to do today?"
+                    maxlength="100"
+                >
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+
+            <!-- List of tasks will appear here -->
+            <ul id="taskList">
+                <!-- Tasks will be added here by JavaScript -->
+            </ul>
+
+            <!-- Message shown when there are no tasks -->
+            <div id="emptyState" class="empty-state">
+                <div class="empty-state-icon">📝</div>
+                <p>No tasks yet. Add one to get started!</p>
+            </div>
+        </div>
+
+        <!-- Data Viewer card -->
+        <div class="card">
+            <h2 class="card-title">
+                <span class="card-icon">💾</span>
+                Saved Data Viewer
+            </h2>
+            
+            <div class="data-viewer-buttons">
+                <button id="showDataBtn" class="action-btn">📊 Show Saved Data</button>
+                <button id="clearDataBtn" class="action-btn danger">🗑️ Clear All Data</button>
+            </div>
+
+            <!-- Data display area -->
+            <div id="dataDisplay" class="data-display" style="display: none;">
+                <div class="data-section">
+                    <h3 class="data-section-title">🎭 Current Mood</h3>
+                    <div id="moodData" class="data-content"></div>
+                </div>
+
+                <div class="data-section">
+                    <h3 class="data-section-title">📋 Tasks Data</h3>
+                    <div id="tasksData" class="data-content"></div>
+                </div>
+
+                <div class="data-section">
+                    <h3 class="data-section-title">💻 Raw JSON Data</h3>
+                    <pre id="rawData" class="raw-data"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
